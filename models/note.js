@@ -1,16 +1,17 @@
 const mongoose = require('mongoose')
+const config = require('../utils/config')
+const logger = require('../utils/logger')
 
 mongoose.set('strictQuery', false)
-const url = process.env.MONGODB_URI
 
-console.log('Connecting to:', url)
+console.log('Connecting to:', config.MONGODB_URI)
 
-mongoose.connect(url)
+mongoose.connect(config.MONGODB_URI)
     .then(result =>{
-        console.log('Connection established')
+        logger.info('Connection established')
     })
     .catch(error =>{
-        console.log('Error during connection:', error.message)
+        logger.error('Error during connection:', error.message)
     })
 
 const noteSchema = new mongoose.Schema({
