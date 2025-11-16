@@ -24,11 +24,11 @@ const note = new Note({
     important: true,
 })
 
-note.save().then(result => {
+note.save().then(result =>{
     console.log('Note saved!')
 
-    
-    
+
+
 
     mongoose.connection.close()
 })

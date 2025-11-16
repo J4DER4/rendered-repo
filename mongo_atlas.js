@@ -28,8 +28,8 @@ const Note = mongoose.model('Note', noteSchema)
 //     mongoose.connection.close()
 // })
 //
-Note.find({}).then(result => {
-    console.log("helloo!")
+Note.find({}).then(result =>{
+    console.log('helloo!')
 
     result.forEach(note =>{
         console.log(note)
